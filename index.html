@@ -169,12 +169,11 @@
                 of legal concepts, communication, research, and critical
                 thinking. I believe that learning law can help me understand
                 society and solve problems in a meaningful way.
-
                 Along with my studies, I am learning web development. I am
                 currently exploring HTML and other basic web technologies.
                 I enjoy creating webpages and learning how websites work.
             </p>
-            <img src="about.jpeg" alt="my photo">
+            <img src="about.jpeg" alt="my photo" width="900" length="400">
 
     
 
@@ -183,11 +182,6 @@
         <section id="contact">
 
             <h2>Contact Me</h2>
-
-            <p>
-                If you would like to contact me, please fill out the form below.
-            </p>
-
 
             <form id="contactForm">
 
@@ -215,7 +209,11 @@
                     id="email"
                     name="email"
                     placeholder="Enter your email"
-                >
+                    required
+    oninvalid="this.setCustomValidity('Email must contain @')"
+    oninput="this.setCustomValidity('')"
+>
+                
 
                 <div class="error" id="emailError">
                     Please fill this field.
