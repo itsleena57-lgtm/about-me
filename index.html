@@ -6,146 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Laiba Aftab | About Me</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f7fa;
-            color: #222;
-        }
-
-        header {
-            background-color: #243b53;
-            color: white;
-            padding: 25px;
-        }
-
-        header h1 {
-            margin: 0 0 8px;
-            font-size: 35px;
-        }
-
-        header p {
-            margin: 0 0 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 25px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 950px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-
-        section {
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        h2 {
-            color: #243b53;
-            font-size: 28px;
-        }
-
-        p {
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        form {
-            max-width: 600px;
-        }
-
-        label {
-            display: block;
-            margin-top: 18px;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            box-sizing: border-box;
-            border: 1px solid #aaa;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        /* Error message */
-        .error {
-            color: #d93025;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-
-        /* Disabled button */
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background-color: #aaa;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: not-allowed;
-        }
-
-        /* Enabled button */
-        button.enabled {
-            background-color: #243b53;
-            cursor: pointer;
-        }
-
-        button.enabled:hover {
-            background-color: #162b3d;
-        }
-
-        /* Success message */
-        #successMessage {
-            color: green;
-            font-weight: bold;
-            margin-top: 15px;
-            display: none;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #243b53;
-            color: white;
-            padding: 20px;
-        }
-    </style>
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
 
         <h1>Laiba Aftab</h1>
 
         <p>Sharia and Law Student | Web Development Learner</p>
 
+        <!-- Navigation -->
         <nav>
             <a href="#about">About Me</a>
             <a href="#contact">Contact</a>
@@ -154,9 +26,11 @@
     </header>
 
 
+    <!-- Main Content -->
     <main>
 
-        
+        <!-- About Me Section -->
+        <section id="about">
 
             <h2>About Me</h2>
 
@@ -164,44 +38,44 @@
                 I am a Sharia and Law student who is also interested in
                 technology and web development. I enjoy learning new things
                 and improving my skills through practical projects.
-
                 As a Sharia and Law student, I am developing my understanding
                 of legal concepts, communication, research, and critical
                 thinking. I believe that learning law can help me understand
-                society and solve problems in a meaningful way.
-                Along with my studies, I am learning web development. I am
+                society and solve problems in a meaningful way.Along with my studies, I am learning web development. I am
                 currently exploring HTML and other basic web technologies.
                 I enjoy creating webpages and learning how websites work.
             </p>
-            <img src="about.jpeg" alt="my photo" width="900" length="400">
 
-    
+            <img src="about.jpeg" alt="My photo" >
+
+        </section>
 
 
         <!-- Contact Section -->
+        <section id="contact">
 
             <h2>Contact Me</h2>
 
-            <form id="contactForm">
+            <form>
 
                 <!-- Name -->
                 <label for="name">Name:</label>
+                <br>
 
                 <input
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Enter your name"
-    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '')"
->
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
 
-                <div class="error" id="nameError">
-                    Please fill this field.
-                </div>
+                <br><br>
 
 
                 <!-- Email -->
                 <label for="email">Email:</label>
+                <br>
 
                 <input
                     type="email"
@@ -209,20 +83,16 @@
                     name="email"
                     placeholder="Enter your email"
                     required
-    oninvalid="this.setCustomValidity('Email must contain @')"
-    oninput="this.setCustomValidity('')"
->
-                
+                >
 
-                <div class="error" id="emailError">
-                    Please fill this field.
-                </div>
+                <br><br>
 
 
                 <!-- Reason -->
                 <label for="reason">Reason for Contact:</label>
+                <br>
 
-                <select id="reason" name="reason">
+                <select id="reason" name="reason" required>
 
                     <option value="">-- Please choose an option --</option>
 
@@ -244,42 +114,38 @@
 
                 </select>
 
-                <div class="error" id="reasonError">
-                    Please fill this field.
-                </div>
+                <br><br>
 
 
                 <!-- Message -->
                 <label for="message">Message:</label>
+                <br>
 
                 <textarea
                     id="message"
                     name="message"
                     rows="6"
+                    cols="50"
                     placeholder="Write your message here..."
+                    required
                 ></textarea>
 
-                <div class="error" id="messageError">
-                    Please fill this field.
-                </div>
+                <br><br>
 
 
-                <!-- Submit -->
-                <button type="submit" id="submitButton" disabled>
+                <!-- Submit Button -->
+                <button type="submit">
                     Submit
                 </button>
 
-                <div id="successMessage">
-                    Form submitted successfully!
-                </div>
-
             </form>
 
-        
+        </section>
 
     </main>
 
 
+    <!-- Footer -->
     <footer>
 
         <p>
@@ -288,129 +154,6 @@
 
     </footer>
 
-<script>
-
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const reason = document.getElementById("reason");
-    const message = document.getElementById("message");
-
-    const submitButton = document.getElementById("submitButton");
-    const form = document.getElementById("contactForm");
-
-
-    // Check all fields and enable/disable button
-    function checkForm() {
-
-        if (
-            name.value.trim() !== "" &&
-            email.value.trim() !== "" &&
-            reason.value !== "" &&
-            message.value.trim() !== ""
-        ) {
-
-            submitButton.disabled = false;
-            submitButton.classList.add("enabled");
-
-        } else {
-
-            submitButton.disabled = true;
-            submitButton.classList.remove("enabled");
-        }
-    }
-
-
-    // Show error when user leaves an empty field
-    name.addEventListener("blur", function () {
-
-        if (name.value.trim() === "") {
-            document.getElementById("nameError").style.display = "block";
-        }
-    });
-
-
-    email.addEventListener("blur", function () {
-
-        if (email.value.trim() === "") {
-            document.getElementById("emailError").style.display = "block";
-        }
-    });
-
-
-    reason.addEventListener("blur", function () {
-
-        if (reason.value === "") {
-            document.getElementById("reasonError").style.display = "block";
-        }
-    });
-
-
-    message.addEventListener("blur", function () {
-
-        if (message.value.trim() === "") {
-            document.getElementById("messageError").style.display = "block";
-        }
-    });
-
-
-    // Remove error immediately when user starts filling the field
-    name.addEventListener("input", function () {
-
-        if (name.value.trim() !== "") {
-            document.getElementById("nameError").style.display = "none";
-        }
-
-        checkForm();
-    });
-
-
-    email.addEventListener("input", function () {
-
-        if (email.value.trim() !== "") {
-            document.getElementById("emailError").style.display = "none";
-        }
-
-        checkForm();
-    });
-
-
-    reason.addEventListener("change", function () {
-
-        if (reason.value !== "") {
-            document.getElementById("reasonError").style.display = "none";
-        }
-
-        checkForm();
-    });
-
-
-    message.addEventListener("input", function () {
-
-        if (message.value.trim() !== "") {
-            document.getElementById("messageError").style.display = "none";
-        }
-
-        checkForm();
-    });
-
-
-    // Submit form
-    form.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        checkForm();
-
-        if (!submitButton.disabled) {
-
-            document.getElementById("successMessage").style.display = "block";
-
-        }
-
-    });
-
-</script>
-   
 </body>
 
 </html>
